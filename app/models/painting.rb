@@ -5,7 +5,7 @@
 #  id              :integer          not null, primary key
 #  additional_info :string
 #  currently_at    :string
-#  date_completed  :date
+#  date            :string
 #  image           :string
 #  paint_medium    :string
 #  title           :string

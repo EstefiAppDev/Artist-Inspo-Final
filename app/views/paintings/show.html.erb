@@ -1,7 +1,7 @@
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <h1>
-      Painting #<%= @painting.id %> details
+      <%= @painting.title %> 
     </h1>
 
     <div class="row mb-3">
@@ -23,7 +23,7 @@
         Date completed
       </dt>
       <dd>
-        <%= @painting.date_completed %>
+        <%= @painting.date %>
       </dd>
 
       <dt>
@@ -93,7 +93,7 @@
           Date completed
         </label>
 
-        <input type="date" id="date_completed_box" name="query_date_completed" class="form-control" value="<%= @painting.date_completed %>">
+        <input type="date" id="date_completed_box" name="query_date_completed" class="form-control" value="<%= @painting.date %>">
       </div>
 
       <div class="form-group">
@@ -130,10 +130,11 @@
 
       <div class="form-group">
         <label for="fan_id_box">
-          Fan
+          Image
         </label>
 
-        <input type="text" id="fan_id_box" name="query_fan_id" class="form-control" value="<%= @painting.fan_id %>">
+        <input id="browser_image" type="text" name="input_image" placeholder="Enter a URL for the image..." value="<%= @painting.image %>" size="50">
+
       </div>
 
       <button class="btn btn-block btn-outline-secondary">

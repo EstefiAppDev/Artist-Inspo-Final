@@ -1,4 +1,5 @@
 class PaintingsController < ApplicationController
+  
   def index
     @paintings = Painting.all.order({ :created_at => :desc })
 
@@ -33,12 +34,12 @@ class PaintingsController < ApplicationController
     the_id = params.fetch("path_id")
     @painting = Painting.where({ :id => the_id }).at(0)
 
-    @painting.date_completed = params.fetch("query_date_completed")
+    @painting.date = params.fetch("query_date_completed")
     @painting.paint_medium = params.fetch("query_paint_medium")
     @painting.style_id = params.fetch("query_style_id")
     @painting.artist_id = params.fetch("query_artist_id")
     @painting.genre_id = params.fetch("query_genre_id")
-    @painting.fan_id = params.fetch("query_fan_id")
+    @painting.image = params.fetch("input_image")
 
     if @painting.valid?
       @painting.save

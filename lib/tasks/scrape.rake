@@ -52,10 +52,11 @@ namespace :scrape do
         if category == "Painting"
          new_painting = Painting.new
          new_painting.title = paintings.fetch("title")
-         new_painting.date_completed = paintings.fetch("date")
+         new_painting.date = paintings.fetch("date")
          new_painting.paint_medium = paintings.fetch("medium")
          new_painting.currently_at = paintings.fetch("collecting_institution")
-         new_painting.additional_info = paintings.fetch("additional_information")
+         #new_painting.additional_info = paintings.fetch("additional_information")
+         #new_painting.image = new_painting.additional_info.match(/(http)(.+)(.jpg)/).to_s
 
          new_painting.save
 
@@ -64,25 +65,6 @@ namespace :scrape do
       end
     end
 
-      #p artworks_fetch.to_s
-        
-          #paintings.category
-          #paintings.title
-          #paintings.date 
-
-
-        #fetch_paintings = paintings.find_by( :category, "Painting")
-
-       # if find_category == "Painting"
-        # title = first_record.fetch("title")
-        # p title
-       # else
-          #p "nope"  
-        #end
-
-      #p fetch_paintings.to_s
-
-      # Read the data and save it into your database.
   end
 end   
 

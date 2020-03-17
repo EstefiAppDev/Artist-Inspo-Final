@@ -37,6 +37,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    ImageResize (0.0.5)
     actioncable (6.0.2.1)
       actionpack (= 6.0.2.1)
       nio4r (~> 2.0)
@@ -403,6 +404,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ImageResize (~> 0.0.5)
   activeadmin (= 2.2.0)
   annotate (< 3.0.0)
   awesome_print
