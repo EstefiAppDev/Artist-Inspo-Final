@@ -1,0 +1,146 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Painting #<%= @painting.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/paintings" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_painting/<%= @painting.id %>" class="btn btn-block btn-outline-secondary">
+          Delete painting
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Date completed
+      </dt>
+      <dd>
+        <%= @painting.date_completed %>
+      </dd>
+
+      <dt>
+        Paint medium
+      </dt>
+      <dd>
+        <%= @painting.paint_medium %>
+      </dd>
+
+      <dt>
+        Style
+      </dt>
+      <dd>
+        <%= @painting.style_id %>
+      </dd>
+
+      <dt>
+        Artist
+      </dt>
+      <dd>
+        <%= @painting.artist_id %>
+      </dd>
+
+      <dt>
+        Genre
+      </dt>
+      <dd>
+        <%= @painting.genre_id %>
+      </dd>
+
+      <dt>
+        Fan
+      </dt>
+      <dd>
+        <%= @painting.fan_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@painting.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@painting.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h2>
+      Edit painting
+    </h2>
+
+    <form action="/modify_painting/<%= @painting.id %>"  method="post" >
+      <div class="form-group">
+        <label for="date_completed_box">
+          Date completed
+        </label>
+
+        <input type="date" id="date_completed_box" name="query_date_completed" class="form-control" value="<%= @painting.date_completed %>">
+      </div>
+
+      <div class="form-group">
+        <label for="paint_medium_box">
+          Paint medium
+        </label>
+
+        <input type="text" id="paint_medium_box" name="query_paint_medium" class="form-control" value="<%= @painting.paint_medium %>">
+      </div>
+
+      <div class="form-group">
+        <label for="style_id_box">
+          Style
+        </label>
+
+        <input type="text" id="style_id_box" name="query_style_id" class="form-control" value="<%= @painting.style_id %>">
+      </div>
+
+      <div class="form-group">
+        <label for="artist_id_box">
+          Artist
+        </label>
+
+        <input type="text" id="artist_id_box" name="query_artist_id" class="form-control" value="<%= @painting.artist_id %>">
+      </div>
+
+      <div class="form-group">
+        <label for="genre_id_box">
+          Genre
+        </label>
+
+        <input type="text" id="genre_id_box" name="query_genre_id" class="form-control" value="<%= @painting.genre_id %>">
+      </div>
+
+      <div class="form-group">
+        <label for="fan_id_box">
+          Fan
+        </label>
+
+        <input type="text" id="fan_id_box" name="query_fan_id" class="form-control" value="<%= @painting.fan_id %>">
+      </div>
+
+      <button class="btn btn-block btn-outline-secondary">
+        Update painting
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

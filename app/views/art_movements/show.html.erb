@@ -1,0 +1,71 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Art movement #<%= @art_movement.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/art_movements" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_art_movement/<%= @art_movement.id %>" class="btn btn-block btn-outline-secondary">
+          Delete art movement
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Genre name
+      </dt>
+      <dd>
+        <%= @art_movement.genre_name %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@art_movement.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@art_movement.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h2>
+      Edit art movement
+    </h2>
+
+    <form action="/modify_art_movement/<%= @art_movement.id %>"  method="post" >
+      <div class="form-group">
+        <label for="genre_name_box">
+          Genre name
+        </label>
+
+        <input type="text" id="genre_name_box" name="query_genre_name" class="form-control" value="<%= @art_movement.genre_name %>">
+      </div>
+
+      <button class="btn btn-block btn-outline-secondary">
+        Update art movement
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

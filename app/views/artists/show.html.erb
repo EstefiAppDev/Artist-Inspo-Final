@@ -1,0 +1,101 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Artist #<%= @artist.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/artists" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_artist/<%= @artist.id %>" class="btn btn-block btn-outline-secondary">
+          Delete artist
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Artist name
+      </dt>
+      <dd>
+        <%= @artist.artist_name %>
+      </dd>
+
+      <dt>
+        Artist dob
+      </dt>
+      <dd>
+        <%= @artist.artist_dob %>
+      </dd>
+
+      <dt>
+        Genre
+      </dt>
+      <dd>
+        <%= @artist.genre_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@artist.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@artist.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h2>
+      Edit artist
+    </h2>
+
+    <form action="/modify_artist/<%= @artist.id %>"  method="post" >
+      <div class="form-group">
+        <label for="artist_name_box">
+          Artist name
+        </label>
+
+        <input type="text" id="artist_name_box" name="query_artist_name" class="form-control" value="<%= @artist.artist_name %>">
+      </div>
+
+      <div class="form-group">
+        <label for="artist_dob_box">
+          Artist dob
+        </label>
+
+        <input type="date" id="artist_dob_box" name="query_artist_dob" class="form-control" value="<%= @artist.artist_dob %>">
+      </div>
+
+      <div class="form-group">
+        <label for="genre_id_box">
+          Genre
+        </label>
+
+        <input type="text" id="genre_id_box" name="query_genre_id" class="form-control" value="<%= @artist.genre_id %>">
+      </div>
+
+      <button class="btn btn-block btn-outline-secondary">
+        Update artist
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

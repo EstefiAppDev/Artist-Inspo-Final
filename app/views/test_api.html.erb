@@ -1,0 +1,12 @@
+<%= @output.at(0).keys %>
+<ul>
+<% @output.each do |paintings| %>
+
+  <li><%= paintings.fetch("medium") %></li>
+
+  <li><%= paintings.fetch("category") %></li>
+  <br/>
+<% end %>
+</ul>
+
+ 

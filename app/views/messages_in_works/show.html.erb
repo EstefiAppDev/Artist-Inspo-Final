@@ -1,0 +1,86 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Messages in work #<%= @messages_in_work.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/messages_in_works" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_messages_in_work/<%= @messages_in_work.id %>" class="btn btn-block btn-outline-secondary">
+          Delete messages in work
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Painting
+      </dt>
+      <dd>
+        <%= @messages_in_work.painting_id %>
+      </dd>
+
+      <dt>
+        Theme
+      </dt>
+      <dd>
+        <%= @messages_in_work.theme_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@messages_in_work.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@messages_in_work.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h2>
+      Edit messages in work
+    </h2>
+
+    <form action="/modify_messages_in_work/<%= @messages_in_work.id %>"  method="post" >
+      <div class="form-group">
+        <label for="painting_id_box">
+          Painting
+        </label>
+
+        <input type="text" id="painting_id_box" name="query_painting_id" class="form-control" value="<%= @messages_in_work.painting_id %>">
+      </div>
+
+      <div class="form-group">
+        <label for="theme_id_box">
+          Theme
+        </label>
+
+        <input type="text" id="theme_id_box" name="query_theme_id" class="form-control" value="<%= @messages_in_work.theme_id %>">
+      </div>
+
+      <button class="btn btn-block btn-outline-secondary">
+        Update messages in work
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

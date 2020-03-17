@@ -1,0 +1,101 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Style #<%= @style.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/styles" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_style/<%= @style.id %>" class="btn btn-block btn-outline-secondary">
+          Delete style
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Artist
+      </dt>
+      <dd>
+        <%= @style.artist_id %>
+      </dd>
+
+      <dt>
+        Theme
+      </dt>
+      <dd>
+        <%= @style.theme_id %>
+      </dd>
+
+      <dt>
+        Style name
+      </dt>
+      <dd>
+        <%= @style.style_name %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@style.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@style.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h2>
+      Edit style
+    </h2>
+
+    <form action="/modify_style/<%= @style.id %>"  method="post" >
+      <div class="form-group">
+        <label for="artist_id_box">
+          Artist
+        </label>
+
+        <input type="text" id="artist_id_box" name="query_artist_id" class="form-control" value="<%= @style.artist_id %>">
+      </div>
+
+      <div class="form-group">
+        <label for="theme_id_box">
+          Theme
+        </label>
+
+        <input type="text" id="theme_id_box" name="query_theme_id" class="form-control" value="<%= @style.theme_id %>">
+      </div>
+
+      <div class="form-group">
+        <label for="style_name_box">
+          Style name
+        </label>
+
+        <input type="text" id="style_name_box" name="query_style_name" class="form-control" value="<%= @style.style_name %>">
+      </div>
+
+      <button class="btn btn-block btn-outline-secondary">
+        Update style
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

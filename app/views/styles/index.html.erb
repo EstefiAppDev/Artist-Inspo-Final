@@ -1,0 +1,118 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      List of all styles
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h2>
+      Add a new style
+    </h2>
+
+    <form action="/insert_style" method="post">
+      <div class="form-group">
+        <label for="artist_id_box">
+          Artist
+        </label>
+
+        <input type="text" id="artist_id_box" name="query_artist_id" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="theme_id_box">
+          Theme
+        </label>
+
+        <input type="text" id="theme_id_box" name="query_theme_id" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="style_name_box">
+          Style name
+        </label>
+
+        <input type="text" id="style_name_box" name="query_style_name" class="form-control">
+      </div>
+
+      <button class="btn btn-block btn-outline-secondary">
+        Create style
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Artist
+        </th>
+
+        <th>
+          Theme
+        </th>
+
+        <th>
+          Style name
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @styles.each do |style| %>
+      <tr>
+        <td>
+          <%= style.id %>
+        </td>
+
+        <td>
+          <%= style.artist_id %>
+        </td>
+
+        <td>
+          <%= style.theme_id %>
+        </td>
+
+        <td>
+          <%= style.style_name %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(style.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(style.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/styles/<%= style.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

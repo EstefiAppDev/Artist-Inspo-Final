@@ -1,0 +1,86 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Fan #<%= @fan.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/fans" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_fan/<%= @fan.id %>" class="btn btn-block btn-outline-secondary">
+          Delete fan
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Painting
+      </dt>
+      <dd>
+        <%= @fan.painting_id %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @fan.user_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@fan.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@fan.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h2>
+      Edit fan
+    </h2>
+
+    <form action="/modify_fan/<%= @fan.id %>"  method="post" >
+      <div class="form-group">
+        <label for="painting_id_box">
+          Painting
+        </label>
+
+        <input type="text" id="painting_id_box" name="query_painting_id" class="form-control" value="<%= @fan.painting_id %>">
+      </div>
+
+      <div class="form-group">
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" class="form-control" value="<%= @fan.user_id %>">
+      </div>
+
+      <button class="btn btn-block btn-outline-secondary">
+        Update fan
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

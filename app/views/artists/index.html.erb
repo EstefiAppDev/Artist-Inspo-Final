@@ -1,0 +1,118 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      List of all artists
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h2>
+      Add a new artist
+    </h2>
+
+    <form action="/insert_artist" method="post">
+      <div class="form-group">
+        <label for="artist_name_box">
+          Artist name
+        </label>
+
+        <input type="text" id="artist_name_box" name="query_artist_name" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="artist_dob_box">
+          Artist dob
+        </label>
+
+        <input type="date" id="artist_dob_box" name="query_artist_dob" class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label for="genre_id_box">
+          Genre
+        </label>
+
+        <input type="text" id="genre_id_box" name="query_genre_id" class="form-control">
+      </div>
+
+      <button class="btn btn-block btn-outline-secondary">
+        Create artist
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Artist name
+        </th>
+
+        <th>
+          Artist dob
+        </th>
+
+        <th>
+          Genre
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @artists.each do |artist| %>
+      <tr>
+        <td>
+          <%= artist.id %>
+        </td>
+
+        <td>
+          <%= artist.artist_name %>
+        </td>
+
+        <td>
+          <%= artist.artist_dob %>
+        </td>
+
+        <td>
+          <%= artist.genre_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(artist.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(artist.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/artists/<%= artist.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

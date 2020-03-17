@@ -1,0 +1,86 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Theme #<%= @theme.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/themes" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <div class="col">
+        <a href="/delete_theme/<%= @theme.id %>" class="btn btn-block btn-outline-secondary">
+          Delete theme
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Description
+      </dt>
+      <dd>
+        <%= @theme.description %>
+      </dd>
+
+      <dt>
+        Theme name
+      </dt>
+      <dd>
+        <%= @theme.theme_name %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@theme.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@theme.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h2>
+      Edit theme
+    </h2>
+
+    <form action="/modify_theme/<%= @theme.id %>"  method="post" >
+      <div class="form-group">
+        <label for="description_box">
+          Description
+        </label>
+
+        <input type="text" id="description_box" name="query_description" class="form-control" value="<%= @theme.description %>">
+      </div>
+
+      <div class="form-group">
+        <label for="theme_name_box">
+          Theme name
+        </label>
+
+        <input type="text" id="theme_name_box" name="query_theme_name" class="form-control" value="<%= @theme.theme_name %>">
+      </div>
+
+      <button class="btn btn-block btn-outline-secondary">
+        Update theme
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
