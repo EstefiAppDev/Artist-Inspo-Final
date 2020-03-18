@@ -20,7 +20,10 @@
 
     <dl>
       <dt>
-        Date completed
+        <img src = "<%= @painting.image%>" width = "500">
+      </dt>
+      <dt>
+        Year completed
       </dt>
       <dd>
         <%= @painting.date %>
@@ -90,10 +93,10 @@
     <form action="/modify_painting/<%= @painting.id %>"  method="post" >
       <div class="form-group">
         <label for="date_completed_box">
-          Date completed
+          Year completed
         </label>
 
-        <input type="date" id="date_completed_box" name="query_date_completed" class="form-control" value="<%= @painting.date %>">
+        <input type="text" id="date_completed_box" name="query_date_completed" class="form-control" value="<%= @painting.date %>">
       </div>
 
       <div class="form-group">
@@ -129,7 +132,7 @@
       </div>
 
       <div class="form-group">
-        <label for="fan_id_box">
+        <label for="browser_image">
           Image
         </label>
 

@@ -4,6 +4,7 @@
 #
 #  id              :integer          not null, primary key
 #  additional_info :string
+#  artist          :string
 #  currently_at    :string
 #  date            :string
 #  image           :string

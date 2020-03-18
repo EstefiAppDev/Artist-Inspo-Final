@@ -151,6 +151,7 @@ Rails.application.routes.draw do
   post("/insert_painting", { :controller => "paintings", :action => "create" })
           
   # READ
+  get("/", { :controller => "paintings", :action => "index" })
   get("/paintings", { :controller => "paintings", :action => "index" })
   
   get("/paintings/:path_id", { :controller => "paintings", :action => "show" })
