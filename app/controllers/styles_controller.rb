@@ -14,7 +14,6 @@ class StylesController < ApplicationController
 
   def create
     @style = Style.new
-    @style.artist_id = params.fetch("query_artist_id")
     @style.theme_id = params.fetch("query_theme_id")
     @style.style_name = params.fetch("query_style_name")
 
@@ -30,7 +29,7 @@ class StylesController < ApplicationController
     the_id = params.fetch("path_id")
     @style = Style.where({ :id => the_id }).at(0)
 
-    @style.artist_id = params.fetch("query_artist_id")
+
     @style.theme_id = params.fetch("query_theme_id")
     @style.style_name = params.fetch("query_style_name")
 

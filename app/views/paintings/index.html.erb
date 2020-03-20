@@ -103,16 +103,6 @@
           Genre
         </th>
 
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-        </th>
       </tr>
 
       <% @paintings.each do |painting| %>
@@ -138,14 +128,14 @@
         </td>
 
         <td>
-          <%= painting.genre_id %>
+          <%# <%= painting.genre.genre_name %> %>
         </td>
 
         <td>
-          <%= time_ago_in_words(painting.created_at) %> ago
+          <%# <%= time_ago_in_words(painting.created_at) %> 
         </td>
         <td>
-          <%= time_ago_in_words(painting.updated_at) %> ago
+          <%# <%= time_ago_in_words(painting.updated_at) %> 
         </td>
 
         <td>

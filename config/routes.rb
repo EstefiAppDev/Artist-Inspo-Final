@@ -2,6 +2,25 @@ Rails.application.routes.draw do
 
 
 
+  # Routes for the Theme resource:
+
+  # CREATE
+  post("/insert_theme", { :controller => "themes", :action => "create" })
+          
+  # READ
+  get("/themes", { :controller => "themes", :action => "index" })
+  
+  get("/themes/:path_id", { :controller => "themes", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_theme/:path_id", { :controller => "themes", :action => "update" })
+  
+  # DELETE
+  get("/delete_theme/:path_id", { :controller => "themes", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the Fan resource:
 
   get("/test_api", { :controller => "application", :action => "test_api"})
@@ -126,15 +145,6 @@ Rails.application.routes.draw do
 
   #------------------------------
 
-  # Routes for the Theme resource:
-
-  # CREATE
-  post("/insert_theme", { :controller => "themes", :action => "create" })
-          
-  # READ
-  get("/themes", { :controller => "themes", :action => "index" })
-  
-  get("/themes/:path_id", { :controller => "themes", :action => "show" })
   
   # UPDATE
   

@@ -10,16 +10,11 @@
 #
 
 class Theme < ApplicationRecord
+has_many :styles
+has_many :messages, :class_name => "MessagesInWork"
+has_many :types
+has_many :paintings, :dependent => :nullify
 
-  has_many :styles
-
-  has_many :messages, :class_name => "MessagesInWork"
-
-  has_many :types
-
-  has_many :artists, :through => :styles, :source => :artist
-
-  has_many :paintings, :through => :messages, :source => :painting
-  
-  has_many :genres, :through => :types, :source => :genre 
+has_many :artists, :through => :styles, :source => :artist
+has_many :genres, :through => :types, :source => :genre
 end

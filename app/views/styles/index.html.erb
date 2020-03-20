@@ -15,13 +15,6 @@
     </h2>
 
     <form action="/insert_style" method="post">
-      <div class="form-group">
-        <label for="artist_id_box">
-          Artist
-        </label>
-
-        <input type="text" id="artist_id_box" name="query_artist_id" class="form-control">
-      </div>
 
       <div class="form-group">
         <label for="theme_id_box">
@@ -90,7 +83,7 @@
         </td>
 
         <td>
-          <%= style.theme_id %>
+          <%= style.theme.theme_name %>
         </td>
 
         <td>

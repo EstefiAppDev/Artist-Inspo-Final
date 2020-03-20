@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_19_202625) do
+ActiveRecord::Schema.define(version: 2020_03_20_183345) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -68,7 +68,6 @@ ActiveRecord::Schema.define(version: 2020_03_19_202625) do
 
   create_table "paintings", force: :cascade do |t|
     t.string "paint_medium"
-    t.integer "style_id"
     t.integer "artist_id"
     t.integer "genre_id"
     t.datetime "created_at", precision: 6, null: false
@@ -79,6 +78,7 @@ ActiveRecord::Schema.define(version: 2020_03_19_202625) do
     t.integer "fan_id"
     t.string "image"
     t.string "date"
+    t.integer "theme_id"
   end
 
   create_table "styles", force: :cascade do |t|

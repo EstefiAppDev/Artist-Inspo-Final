@@ -14,7 +14,7 @@
 #  artist_id       :integer
 #  fan_id          :integer
 #  genre_id        :integer
-#  style_id        :integer
+#  theme_id        :integer
 #
 
 class Painting < ApplicationRecord
@@ -33,7 +33,7 @@ class Painting < ApplicationRecord
 
   belongs_to :fan, :required => false, :class_name => "User"
 
-  has_many :themes, :through => :messages, :source => :theme
+  belongs_to :theme, :required => false
 
   
 end
