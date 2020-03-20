@@ -19,7 +19,7 @@ class PaintingsController < ApplicationController
     @painting.title = params.fetch("query_title")
     @painting.date = params.fetch("query_date_completed")
     @painting.paint_medium = params.fetch("query_paint_medium")
-    @painting.theme_id = params.fetch("query_theme_id")
+    # @painting.theme_id = params.fetch("query_theme_id")
     @painting.artist_id = params.fetch("query_artist_id")
     @painting.genre_id = params.fetch("query_genre_id")
     @painting.image = params.fetch("input_image")

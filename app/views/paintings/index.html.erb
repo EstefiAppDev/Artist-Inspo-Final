@@ -6,9 +6,9 @@
   </div>
 </div>
 
-<hr>
 
-<div class="row mb-3">
+
+<%# <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <h2>
       Add a new painting
@@ -72,9 +72,8 @@
       </button>
     </form>
   </div>
-</div>
+</div> %>
 
-<hr>
 <div class="row mb-3">
   <div class="col-md-12">
     <table class="table">
@@ -103,6 +102,10 @@
           Genre
         </th>
 
+        <th>
+          Theme
+        </th>
+
       </tr>
 
       <% @paintings.each do |painting| %>
@@ -128,7 +131,12 @@
         </td>
 
         <td>
-          <%# <%= painting.genre.genre_name %> %>
+          <%= painting.genre.genre_name %>
+        </td>
+
+
+        <td>
+          <%= painting.theme.theme_name %>
         </td>
 
         <td>

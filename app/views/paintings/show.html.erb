@@ -57,12 +57,12 @@
         <%= @painting.genre.genre_name %> 
       </dd>
 
-      <dt>
+      <%# <dt>
         Fan
       </dt>
       <dd>
         <%= @painting.fan_id %>
-      </dd>
+     <%# </dd> %>
 
       <dt>
         Created at
@@ -84,78 +84,78 @@
 <hr>
 
 
-<div class="row mb-3">
+<%# <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <h2>
       Edit painting
-    </h2>
+    </h2> %>
 
-    <form action="/modify_painting/<%= @painting.id %>"  method="post" >
+    <%# <form action="/modify_painting/<%= @painting.id %>  <%# method="post" >
       
-      <div class="form-group">
+      <%# <div class="form-group">
         <label for="title_box">
           Title
-        </label>
+        </label> %>
 
-        <input type="text" id="title_box" name="query_title" class="form-control" value="<%= @painting.title %>">
-      </div>
+        <%# <input type="text" id="title_box" name="query_title" class="form-control" value="<%= @painting.title %>
+      <%# </div>
       <div class="form-group">
         <label for="date_completed_box">
           Year completed
-        </label>
+        </label> %>
 
-        <input type="text" id="date_completed_box" name="query_date_completed" class="form-control" value="<%= @painting.date %>">
-      </div>
-
+        <%# <input type="text" id="date_completed_box" name="query_date_completed" class="form-control" value="<%= @painting.date %>
+      <%# </div> %>
+<%# 
       <div class="form-group">
         <label for="paint_medium_box">
           Paint medium
-        </label>
+        </label> %>
 
-        <input type="text" id="paint_medium_box" name="query_paint_medium" class="form-control" value="<%= @painting.paint_medium %>">
-      </div>
+        <%# <input type="text" id="paint_medium_box" name="query_paint_medium" class="form-control" value="<%= @painting.paint_medium %>
+      <%# </div>
 
       <div class="form-group">
         <label for="theme_id_box">
           Theme
-        </label>
+        </label> %>
 
-        <input type="text" id="theme_id_box" name="query_theme_id" class="form-control" value="<%= @painting.theme_id %>">
-      </div>
+        <%# <input type="text" id="theme_id_box" name="query_theme_id" class="form-control" value="<%= @painting.theme_id %>
+      <%# </div> %>
 
-      <div class="form-group">
+      <%# <div class="form-group">
         <label for="artist_box">
           Artist
-        </label>
+        </label> %>
 
         <%# <input type="text" id="artist_box" name="query_artist" class="form-control" value="<%= @painting.artist %>
-      </div>
-      <div>
-        <%=select_tag "query_artist_id", options_from_collection_for_select( Artist.all, "id", "artist_name") %>
-      </div>
+      <%# </div> %>
+      <%# <div> %>
+        <%# <%=select_tag "query_artist_id", options_from_collection_for_select( Artist.all, "id", "artist_name") %> 
+      <%# </div> %>
 
-      <div class="form-group">
-        <label for="genre_id_box">
-          Genre
-        </label>
+      <%# <div class="form-group"> %>
+        <%# <label for="genre_id_box"> %>
+          <%# Genre %>
+        <%# </label> %>
 
-        <input type="text" id="genre_id_box" name="query_genre_id" class="form-control" value="<%= @painting.genre_id %>">
-      </div>
+        <%# <input type="text" id="genre_id_box" name="query_genre_id" class="form-control" value="<%= @painting.genre_id %>
+      <%# </div> %>
 
-      <div class="form-group">
-        <label for="browser_image">
-          Image
-        </label>
+      <%# <div class="form-group"> %>
+        <%# <label for="browser_image"> %>
+          <%# Image %>
+        <%# </label> %>
 
-        <input id="browser_image" type="text" name="input_image" placeholder="Enter a URL for the image..." value="<%= @painting.image %>" size="50">
+        <%# <input id="browser_image" type="text" name="input_image" placeholder="Enter a URL for the image..." value="<%= @painting.image" size="50">  %>
 
-      </div>
+      <%# </div> %>
 
-      <button class="btn btn-block btn-outline-secondary">
+      <%# <button class="btn btn-block btn-outline-secondary">
         Update painting
       </button>
-    </form>
-  </div>
-</div>
+    </form> %>
+  <%# </div>
+</div> %>
 
 <hr>
