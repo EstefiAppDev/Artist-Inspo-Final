@@ -27,13 +27,19 @@
           <a class="nav-link" href = "/paintings">All Paintings</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href = "/user_sign_up">Sign Up</a>
+          <% if session.fetch(:user_id).nil? %>
+            <a class="nav-link" href = "/user_sign_up">Sign Up</a>
+          <% end %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href = "/user_sign_in">Sign In</a>
+          <%if session.fetch(:user_id).nil? %>
+            <a class="nav-link" href = "/user_sign_in">Sign In</a>
+          <% end %>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href = "/user_sign_out">Sign Out</a>
+          <% if session.fetch(:user_id).present? %>
+            <a class="nav-link" href = "/user_sign_out">Sign Out</a>
+          <% end %>
         </li>
         <li>
           <%= session.fetch(:user_id)%>

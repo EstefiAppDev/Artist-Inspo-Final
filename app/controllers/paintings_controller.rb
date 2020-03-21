@@ -3,7 +3,7 @@ class PaintingsController < ApplicationController
   def index
     @paintings = Painting.all.order({ :title => :asc })
 
-    render({ :template => "paintings/index.html.erb" })
+    render({ :template => "paintings/index_experiment.html.erb" })
   end
 
   def show
