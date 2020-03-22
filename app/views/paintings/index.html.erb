@@ -1,78 +1,46 @@
 <div class="row mb-3">
   <div class="col-md-12">
     <h1>
-      List of all paintings
+      Filter through our paitings to get inspiration!
     </h1>
   </div>
 </div>
+  <%# <div class="form-group"> %>
+
+    <%# <%=select_tag "query_genre_id", options_from_collection_for_select( ArtMovement.all, "id", "genre_name") %> 
+    <%# <%=select_tag "query_paint_medium", options_from_collection_for_select( Painting.all, "id", "paint_medium") %> 
+    <%# <%=select_tag "query_theme_id", options_from_collection_for_select( Theme.all, "id", "theme_name") %> 
+    <%# <%=select_tag "query_date_completed", options_from_collection_for_select( Painting.all, "id", "date") %> 
+
+
+  <div class="form-group">
+    <h3> Genre </h3>
+    <% ArtMovement.all.each do |genre| %>
+      <label>
+        <%= check_box_tag('q[genre_id_eq_any][]', genre.id, (true if @q.genre_id_eq_any.try(:include?, genre.id))) %>
+        <%= genre.genre_name %> 
+      </label>
+    <% end %>
+  </div>
+  <div class="form-group">
+    <h3> Theme </h3>
+    <% Theme.all.each do |theme| %>
+      <label>
+        <%= check_box_tag('q[theme_id_eq_any][]', theme.id, (true if @q.theme_id_eq_any.try(:include?, theme.id))) %>
+        <%= theme.theme_name %> 
+      </label>
+    <% end %>
+  </div>
+  <button class="btn btn-outline-secondary">
+    Search paintings!
+  </button>
 
 
 
-<%# <div class="row mb-3">
-  <div class="col-md-8 offset-md-2">
-    <h2>
-      Add a new painting
-    </h2>
-    
 
-    <form action="/insert_painting" method="post">
-
-      <div class="form-group">
-        <label for="title_box">
-          Title
-        </label>
-
-        <input type="text" id="title_box" name="query_title" class="form-control">
-      </div>
-      
-      <div class="form-group">
-        <label for="date_completed_box">
-          Year completed
-        </label>
-
-        <input type="text" id="date_completed_box" name="query_date_completed" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="paint_medium_box">
-          Paint medium
-        </label>
-
-        <input type="text" id="paint_medium_box" name="query_paint_medium" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="browser_image">
-          Image
-        </label>
-
-        <input id="browser_image" type="text" name="input_image" placeholder="Enter a URL for the image...">
-
-      </div>
-
-      <div class="form-group">
-        <label for="artist_box">
-          Artist
-        </label>
-
-        <input type="text" id="artist_box" name="query_artist_id" class="form-control">
-      </div>
-
-      <div class="form-group">
-        <label for="genre_id_box">
-          Genre
-        </label>
-
-        <input type="text" id="genre_id_box" name="query_genre_id" class="form-control">
-      </div>
 
  
-      <button class="btn btn-block btn-outline-secondary">
-        Create painting
-      </button>
-    </form>
-  </div>
-</div> %>
+  
 
 <div class="row mb-3">
   <div class="col-md-12">
@@ -157,4 +125,4 @@
   </div>
 </div>
 
-<hr>
+

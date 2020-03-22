@@ -6,6 +6,13 @@ class PaintingsController < ApplicationController
     render({ :template => "paintings/index_experiment.html.erb" })
   end
 
+  def filter 
+    @q = Painting.ransack(params[:q])
+    @paintings = @q.result(:distinct => true).includes(:genre, :theme)
+
+    render({ :template => "paintings/index.html.erb" })
+  end
+
   def show
     the_id = params.fetch("path_id")
     @painting = Painting.where({:id => the_id }).at(0)

@@ -173,6 +173,10 @@ Rails.application.routes.draw do
   # DELETE
   get("/delete_painting/:path_id", { :controller => "paintings", :action => "destroy" })
 
+  # SEARCH 
+
+  get("/search_filter", { :controller => "paintings", :action => "filter"})
+
   #------------------------------
 
   # Routes for the Artist resource:
