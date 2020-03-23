@@ -12,6 +12,14 @@
     <%# <%=select_tag "query_theme_id", options_from_collection_for_select( Theme.all, "id", "theme_name") %> 
     <%# <%=select_tag "query_date_completed", options_from_collection_for_select( Painting.all, "id", "date") %> 
 
+<%= search_form_for @q do |f| %>
+  <div class="form-group">
+    <h3> Paint Medium </h3>
+    <% Painting.all.each.to_a.uniq do |painting| %>
+      <%= check_box_tag('q[paintings_id_eq_any][]', painting.id ) %>
+      <%= painting.paint_medium %>
+    <% end %>
+  </div>
 
   <div class="form-group">
     <h3> Genre </h3>
@@ -34,6 +42,7 @@
   <button class="btn btn-outline-secondary">
     Search paintings!
   </button>
+<% end %>
 
 
 
