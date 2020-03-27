@@ -1,4 +1,4 @@
-<div class="row mb-3">
+<div class="row mb-3 jumbotron">
   <div class="col-md-8 offset-md-2">
     <h1>
       <%= @painting.title %> 
@@ -6,17 +6,12 @@
 
     <div class="row mb-3">
       <div class="col">
-        <a href="/paintings" class="btn btn-block btn-outline-secondary">
+        <a href="/paintings" class="btn btn-primary btn-block">
           Go back
         </a>
       </div>
-
-      <div class="col">
-        <a href="/delete_painting/<%= @painting.id %>" class="btn btn-block btn-outline-secondary">
-          Delete painting
-        </a>
-      </div>
     </div>
+
 
     <dl>
       <dt>
@@ -57,6 +52,7 @@
         <%= @painting.genre.genre_name %> 
       </dd>
 
+    
       <%# <dt>
         Fan
       </dt>
@@ -81,7 +77,7 @@
   </div>
 </div>
 
-<hr>
+
 
 
 <%# <div class="row mb-3">
@@ -158,4 +154,3 @@
   <%# </div>
 </div> %>
 
-<hr>

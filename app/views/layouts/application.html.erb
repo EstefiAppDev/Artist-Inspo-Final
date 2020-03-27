@@ -24,8 +24,12 @@
           <a class="nav-link" href = "/search_filter">Custom Filter</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href = "/paintings">All Paintings</a>
+          <a class="nav-link" href = "/all_paintings">All Paintings</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/my_paintings">Saved paintings</a>
+        </li>
+
         <li class="nav-item">
           <% if session.fetch(:user_id).nil? %>
             <a class="nav-link" href = "/user_sign_up">Sign Up</a>

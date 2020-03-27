@@ -48,4 +48,12 @@ class UsersController < ApplicationController
     redirect_to("/", { :notice => "User account cancelled" })
   end
   
+  def saved_paintings 
+    if session.fetch(:user_id).present? 
+      render({:template=> "users/saved_paintings.html.erb"})
+    else
+      redirect_to("/user_sign_in?accessdenied=1")
+      return
+    end 
+  end
 end

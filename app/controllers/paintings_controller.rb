@@ -1,14 +1,16 @@
 class PaintingsController < ApplicationController
   
-  def index
+  def all_paintings
     @paintings = Painting.all.order({ :title => :asc })
 
     render({ :template => "paintings/index_experiment.html.erb" })
   end
 
-  def filter 
+  def index 
+    
     @q = Painting.ransack(params[:q])
     @paintings = @q.result(:distinct => true).includes(:genre, :theme)
+    # @paintmedium = @q.result.uniq(&:paint_medium)
 
     render({ :template => "paintings/index.html.erb" })
   end
@@ -67,4 +69,21 @@ class PaintingsController < ApplicationController
 
     redirect_to("/paintings", { :notice => "Painting deleted successfully."} )
   end
+
+  def addlike
+    like = Fan.new
+    like.fan_id = session[:current_user_id]
+    like.painting_id = params["query_painting_id"].to_i
+    like.save
+
+    redirect_to("/my_paintings/#{like.painting_id}")
+  end
+
+  def deletelike
+    like = Fan.where({ :id => params["like_id"]}).at(0)
+    like.destroy
+
+    redirect_to("/paintings/#{like.painting_id}")
+  end
+
 end

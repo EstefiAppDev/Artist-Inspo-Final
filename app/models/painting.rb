@@ -34,6 +34,4 @@ class Painting < ApplicationRecord
   belongs_to :fan, :required => false, :class_name => "User"
 
   belongs_to :theme, :required => false
-
-  
 end

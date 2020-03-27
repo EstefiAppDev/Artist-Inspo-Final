@@ -17,6 +17,16 @@ class User < ApplicationRecord
   has_secure_password
 
   has_many :paintings, :foreign_key => "fan_id", :dependent => :nullify
+
+  def saves
+    return Fan.where({ :user_id => self.id })
+  end
+
+  def saved_paintings
+    array_of_painting_ids = self.saves.pluck(:painting_id)
+
+    return Painting.where({ :id => array_of_painting_ids })
+  end
   
 end
 
