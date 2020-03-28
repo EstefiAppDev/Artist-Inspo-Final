@@ -6,23 +6,7 @@
     </h1>
   </div>
 </div>
-  <%# <div class="form-group"> %>
 
-    <%# <%=select_tag "query_genre_id", options_from_collection_for_select( ArtMovement.all, "id", "genre_name") %> 
-    <%# <%=select_tag "query_paint_medium", options_from_collection_for_select( Painting.all, "id", "paint_medium") %> 
-    <%# <%=select_tag "query_theme_id", options_from_collection_for_select( Theme.all, "id", "theme_name") %> 
-    <%# <%=select_tag "query_date_completed", options_from_collection_for_select( Painting.all, "id", "date") %> 
-
-
-  <%# <div class="form-group"> %>
-    <%# <h3>Paint Medium</h3> %>
-    <%# <% @paintings.all.each do |painting| %> 
-      <%# <%= f.check_box('q[paintings_id_eq_any][]', painting.id ) %> 
-       <%# <%= f.check_box :paint_medium_eq, :class => "form-control" %>
-      <%# <%= check_box_tag('q[paint_medium_eq_any][]', painting.paint_medium, (true if @q.paint_medium_eq_any.try(:include?, painting.paint_medium))) %>
-      <%# <%= painting.paint_medium %> 
-    <%# <% end %>
-  <%#</div> %>
 
 <%= search_form_for @q do |f| %>
   <div class="form-group">
