@@ -59,12 +59,12 @@ Rails.application.routes.draw do
 
   # get("/users/my_paintings", {:controller => "users", :action => "my_paintings"})
   # get("/users/:the_user_id", {:controller => "users", :action => "show"})
-  get("/users", {:controller => "users", :action => "index"})
-  get("/users/:the_user_id", {:controller => "users", :action => "show"})
+  #get("/users", {:controller => "users", :action => "index"})
+  #get("/users/:the_user_id", {:controller => "users", :action => "show"})
   get("/users/:the_user_id/saved_paintings", {:controller => "users", :action => "my_paintings"})
 
   get("/insert_like", {:controller=> "paintings", :action=> "add_save"})
-  get("/users/delete_like", {:controller=> "paintings", :action=> "deletelike"})
+  get("/delete_like", {:controller=> "paintings", :action=> "remove_save"})
 
   # ------------------------------
 

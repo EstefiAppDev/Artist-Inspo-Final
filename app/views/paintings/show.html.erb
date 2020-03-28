@@ -73,13 +73,14 @@
       <dd>
         <%= time_ago_in_words(@painting.updated_at) %> ago
       </dd>
+
       <dt>Save this painting</dt>
-        <dd>
-        <form action="/insert_like">
-          <input type="hidden" value=<%=@painting.id%> name="query_painting_id">
-          <button>Save</button>
-        </form>
-        </dd>
+      <dd>
+      <form action="/insert_like">
+        <input type="hidden" value=<%=@painting.id%> name="query_painting_id">
+        <button class="btn btn-success">Save</button>
+      </form>
+      </dd>
     </dl>
   </div>
 </div>

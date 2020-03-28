@@ -11,6 +11,7 @@ class PaintingsController < ApplicationController
     @q = Painting.ransack(params[:q])
     @paintings = @q.result(:distinct => true).includes(:genre, :theme)
     # @paintmedium = @q.result.uniq(&:paint_medium)
+    
 
     render({ :template => "paintings/index.html.erb" })
   end
@@ -79,5 +80,14 @@ class PaintingsController < ApplicationController
     
     redirect_to("/paintings/#{@save.painting_id}")
   end
+
+  def remove_save
+    painting_id = params.fetch("query_bye_painting_id")
+    save = Fan.where({ :painting_id => painting_id }).at(0)
+    save.destroy
+
+    redirect_to("/users/:the_user_id/saved_paintings")
+
+  end 
 
 end

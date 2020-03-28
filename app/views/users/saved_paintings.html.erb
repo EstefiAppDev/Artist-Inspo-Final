@@ -1,22 +1,29 @@
-<h3>My saved paintings<h3>
-<table border="1">
-  <tr>
-    <th>
-      Image
-    </th>
+<div class="row mb-3 jumbotron">
+  <div class="col-md-12">
+    <h1 class="text-center">
+      My saved paintings!
+      <small class="text-muted">Come back and see your favorites</small>
+    </h1>
+  </div>
+</div>
 
   <% @current_user.fans_saved.each do |painting| %>
-  <tr>
-    <td>
-      <img src="<%= painting.image %>">
-    </td>
-    
-    <td>
-      <a href="/paintings/<%= painting.id %>">
-        Show details
-      </a>
-    </td>
-  </tr>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src = "<%= painting.image %>" class="d-block w-100" >
+        <div class="carousel-caption d-none d-md-block">
+          <h5><%= painting.title %></h5>
+          <p><%= painting.artist.artist_name %></p>
+          <a href="/paintings/<%= painting.id %>">
+            Show details
+          </a>
+        <form action="/delete_like">
+          <input type="hidden" value=<%=painting.id%> name="query_bye_painting_id">
+          <button class="btn btn-danger">Unsave</button>
+        </form>
+        </div>
+        
+      </div>
+    </div>
 
   <% end %>
-</table>
