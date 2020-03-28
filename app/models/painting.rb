@@ -27,8 +27,6 @@ class Painting < ApplicationRecord
 
   belongs_to :artist
 
-  has_many :messages, :class_name => "MessagesInWork"
-
   belongs_to :genre, :required => false, :class_name => "ArtMovement"
 
   belongs_to :fan, :required => false, :class_name => "User"

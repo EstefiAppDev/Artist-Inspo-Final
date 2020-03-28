@@ -133,26 +133,6 @@ Rails.application.routes.draw do
   # DELETE
   #get("/delete_style/:path_id", { :controller => "styles", :action => "destroy" })
 
-  #------------------------------
-
-  # Routes for the Messages in work resource:
-
-  # CREATE
-  #post("/insert_messages_in_work", { :controller => "messages_in_works", :action => "create" })
-          
-  # READ
-  #get("/messages_in_works", { :controller => "messages_in_works", :action => "index" })
-  
-  #get("/messages_in_works/:path_id", { :controller => "messages_in_works", :action => "show" })
-  
-  # UPDATE
-  
-  #post("/modify_messages_in_work/:path_id", { :controller => "messages_in_works", :action => "update" })
-  
-  # DELETE
-  #get("/delete_messages_in_work/:path_id", { :controller => "messages_in_works", :action => "destroy" })
-
-  #------------------------------
 
   
   # UPDATE
