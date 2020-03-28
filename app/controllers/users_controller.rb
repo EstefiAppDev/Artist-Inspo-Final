@@ -10,8 +10,16 @@ class UsersController < ApplicationController
     @user = User.new
     @user.email = params.fetch("query_email")
     @user.username = params.fetch("input_username")
-    @user.password = params.fetch("query_password")
-    @user.password_confirmation = params.fetch("query_password_confirmation")
+    @user.password = params.fetch("query_pas fwlfwefq;;
+    
+    
+    
+    
+    
+    qfqefqfe
+    
+    
+sword_confirmation = params.fetch("query_password_confirmation")
 
     save_status = @user.save
 

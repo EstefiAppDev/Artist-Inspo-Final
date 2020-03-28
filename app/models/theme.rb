@@ -11,7 +11,6 @@
 
 class Theme < ApplicationRecord
 has_many :styles
-has_many :messages, :class_name => "MessagesInWork"
 has_many :types
 has_many :paintings, :dependent => :nullify
 
