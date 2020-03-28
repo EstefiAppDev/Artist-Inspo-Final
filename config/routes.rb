@@ -57,10 +57,14 @@ Rails.application.routes.draw do
   # DELETE RECORD
   get("/cancel_user_account", { :controller => "users", :action => "destroy" })
 
-  get("/my_paintings", {:controller => "users", :action => "saved_paintings"})
+  # get("/users/my_paintings", {:controller => "users", :action => "my_paintings"})
+  # get("/users/:the_user_id", {:controller => "users", :action => "show"})
+  get("/users", {:controller => "users", :action => "index"})
+  get("/users/:the_user_id", {:controller => "users", :action => "show"})
+  get("/users/:the_user_id/saved_paintings", {:controller => "users", :action => "my_paintings"})
 
-  get("/insert_like", {:controller=> "paintings", :action=> "addlike"})
-  get("/delete_like/:like_id", {:controller=> "paintings", :action=> "deletelike"})
+  get("/insert_like", {:controller=> "paintings", :action=> "add_save"})
+  get("/users/delete_like", {:controller=> "paintings", :action=> "deletelike"})
 
   # ------------------------------
 
@@ -177,7 +181,7 @@ Rails.application.routes.draw do
   #post("/modify_painting/:path_id", { :controller => "paintings", :action => "update" })
   
   # DELETE
-  get("/delete_painting/:path_id", { :controller => "paintings", :action => "destroy" })
+  #get("/delete_painting/:path_id", { :controller => "paintings", :action => "destroy" })
 
   # SEARCH 
 

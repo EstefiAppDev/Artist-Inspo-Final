@@ -34,4 +34,18 @@ class Painting < ApplicationRecord
   belongs_to :fan, :required => false, :class_name => "User"
 
   belongs_to :theme, :required => false
-end
+
+  def saved
+      return Fan.where({ :painting_id => self.id })
+  end
+
+  def fans
+    array_of_user_ids = self.saved.pluck(:user_id)
+
+    return User.where({ :id => array_of_user_ids })
+  end
+
+  def fan_list
+    return self.fans.pluck(:username).to_sentence
+  end
+end 

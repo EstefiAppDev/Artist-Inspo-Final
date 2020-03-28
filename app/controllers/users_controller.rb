@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   # skip_before_action(:force_user_sign_in, { :only => [:new_registration_form, :create] })
   
+
   def new_registration_form
     render({ :template => "user_sessions/sign_up.html.erb" })
   end
@@ -8,6 +9,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new
     @user.email = params.fetch("query_email")
+    @user.username = params.fetch("input_username")
     @user.password = params.fetch("query_password")
     @user.password_confirmation = params.fetch("query_password_confirmation")
 
@@ -29,6 +31,7 @@ class UsersController < ApplicationController
   def update
     @user = @current_user
     @user.email = params.fetch("query_email")
+    @user.username = params.fetch("input_username")
     @user.password = params.fetch("query_password")
     @user.password_confirmation = params.fetch("query_password_confirmation")
     
@@ -48,12 +51,35 @@ class UsersController < ApplicationController
     redirect_to("/", { :notice => "User account cancelled" })
   end
   
-  def saved_paintings 
+  def index
+    @users = User.all.order({ :id => :asc })
+    render({ :template => "users/index.html.erb" })
+  end
+
+  def show
+    if session.fetch(:user_id).nil?
+        redirect_to("/user_sign_in?accessdenied=1")
+        return 
+    end
+    the_user_id = params.fetch("the_user_id")
+    @user = User.where({ :id => the_user_id }).at(0)
+
+    render({ :template => "users/show.html.erb" })
+
+  end
+
+  def my_paintings 
+
     if session.fetch(:user_id).present? 
       render({:template=> "users/saved_paintings.html.erb"})
     else
       redirect_to("/user_sign_in?accessdenied=1")
       return
     end 
+    the_user_id = params.fetch("the_user_id")
+    @user = User.where({ :id => the_user_id }).at(0)
+
   end
+    
+
 end
