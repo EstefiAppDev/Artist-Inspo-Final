@@ -1,5 +1,5 @@
 AdminUser.create!([
-  {email: "admin@example.com", encrypted_password: "$2a$11$zsAtSaj.3j7.J4fg5hoSEuKLdRWneAUUpxgNFrQQYPcwGrMg0Osqu", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil}
+  {email: "admin@example.com", password: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil}
 ])
 Painting.create!([
   {paint_medium: "Oil and gold leaf on canvas", artist_id: 9, genre_id: 3, title: "Der Kuss (The Kiss)", currently_at: "Österreichische Galerie Belvedere, Vienna", additional_info: nil, fan_id: nil, image: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Klimt_-_The_Kiss.jpg", date: "1907-1908", theme_id: 1},
@@ -93,6 +93,6 @@ ArtMovement.create!([
   {genre_name: "Impressionist"}
 ])
 User.create!([
-  {email: "enavarro1@uchicago.edu", password_digest: "$2a$12$WaMbeLwTrXI6.YEO4K9y8.UFPjbUcr1RFqEGWnQ/OdgDYmnVl/Qky", username: "estefinc"},
-  {email: "estefinavarro96@gmail.com", password_digest: "$2a$12$U1FVn0EoXNMq1l0nCUIizu9YZhvmU2fm/XTRDkA3bt7g1vxJYq0By", username: "Estefiagain"}
+  {email: "enavarro1@uchicago.edu", password: "password", username: "estefinc"},
+  {email: "estefinavarro96@gmail.com", password: "password", username: "Estefiagain"}
 ])
