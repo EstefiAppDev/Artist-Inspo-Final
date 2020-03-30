@@ -18,6 +18,7 @@ gem 'webpacker', '~> 4.0'
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem "ImageResize", "~> 0.0.5"
 gem 'ransack'
+gem "seed_dump"
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'

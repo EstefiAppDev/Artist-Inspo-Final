@@ -9,7 +9,7 @@ class PaintingsController < ApplicationController
   def index 
     
     @q = Painting.ransack(params[:q])
-    @paintings = @q.result(:distinct => true).includes(:genre, :theme)
+    @paintingss = @q.result(:distinct => true).includes(:genre, :theme)
     # @paintmedium = @q.result.uniq(&:paint_medium)
     
 
