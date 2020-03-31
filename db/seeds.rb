@@ -83,9 +83,7 @@ Artist.create!([
   {artist_name: "André Lhote", artist_dob: nil, genre_id: nil},
   {artist_name: "Joseph Stella", artist_dob: nil, genre_id: nil}
 ])
-Style.create!([
-  {artist_id: nil, theme_id: 1, style_name: "Bodies / Figures"}
-])
+
 ArtMovement.create!([
   {genre_name: "Contemporary Art"},
   {genre_name: "Realism"},

@@ -10,7 +10,6 @@ class PaintingsController < ApplicationController
     
     @q = Painting.ransack(params[:q])
     @paintingss = @q.result(:distinct => true).includes(:genre, :theme)
-    # @paintmedium = @q.result.uniq(&:paint_medium)
     
 
     render({ :template => "paintings/index.html.erb" })
