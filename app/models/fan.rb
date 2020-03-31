@@ -15,9 +15,7 @@ class Fan < ApplicationRecord
   
   belongs_to :user
 
-  validates(:fan, { :presence => true })
 
-  validates(:painting, { :presence => true })
 
   def fan
     return User.where({ :id => self.user_id }).at(0)
