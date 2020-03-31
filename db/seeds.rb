@@ -1,6 +1,9 @@
+
+
 AdminUser.create!([
   {email: "admin@example.com", password: "password", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil}
 ])
+
 Painting.create!([
   {paint_medium: "Oil and gold leaf on canvas", artist_id: 9, genre_id: 3, title: "Der Kuss (The Kiss)", currently_at: "Österreichische Galerie Belvedere, Vienna", additional_info: nil, fan_id: nil, image: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Klimt_-_The_Kiss.jpg", date: "1907-1908", theme_id: 1},
   {paint_medium: "Tempera on canvas", artist_id: 18, genre_id: 3, title: "The Birth of Venus", currently_at: "Uffizi Gallery, Florence", additional_info: nil, fan_id: nil, image: "https://images.uffizi.it/production/attachments/1503909239806647-605174-2-.jpg?ixlib=rails-2.1.3&w=1200&h=800&fit=clip&crop=center&fm=gjpg&auto=compress", date: "1486", theme_id: 1},
@@ -30,9 +33,9 @@ Painting.create!([
   {paint_medium: "Oil on canvas", artist_id: 26, genre_id: 4, title: "Almudena", currently_at: nil, additional_info: nil, fan_id: nil, image: "https://d32dm0rphc51dk.cloudfront.net/9yjtFSZd30CW1zJWloYkOg/large.jpg", date: "1966", theme_id: 5},
   {paint_medium: "Acrylic on canvas", artist_id: 27, genre_id: 4, title: "The Embrace no.2", currently_at: nil, additional_info: nil, fan_id: nil, image: "https://d32dm0rphc51dk.cloudfront.net/XWFu7g-AZif5IxaPRo_vqA/large.jpg", date: "1967", theme_id: 1},
   {paint_medium: "Oil on canvas", artist_id: 28, genre_id: 4, title: "Outburst", currently_at: nil, additional_info: nil, fan_id: nil, image: "https://d32dm0rphc51dk.cloudfront.net/vUdVDwDuwJ8HeBKGEFztMA/large.jpg", date: "1956", theme_id: 3},
-  {paint_medium: "Oil on canvas", artist_id: 29, genre_id: 5, title: "Finlandia", currently_at: nil, additional_info: nil, fan_id: nil, image: "https://d32dm0rphc51dk.cloudfront.net/Pflc_FzfyOMuaf_w7gr2wg/large.jpg", date: "1940", theme_id: 1},
-  {paint_medium: "Oil on canvas", artist_id: 30, genre_id: 5, title: "Paysage de Mirmande", currently_at: nil, additional_info: nil, fan_id: nil, image: "https://d32dm0rphc51dk.cloudfront.net/Ne-L94fTB-pQglSuhzpI6Q/large.jpg", date: "1938", theme_id: 4},
-  {paint_medium: "Oil on waxed linen", artist_id: 31, genre_id: 5, title: "Still Life with Apples and Shell", currently_at: nil, additional_info: nil, fan_id: nil, image: "https://d32dm0rphc51dk.cloudfront.net/p9J91glEhW3Qqj5es-2L4A/large.jpg", date: "1912", theme_id: 6}
+  {paint_medium: "Oil on canvas", artist_id: 29, genre_id: 1, title: "Finlandia", currently_at: nil, additional_info: nil, fan_id: nil, image: "https://d32dm0rphc51dk.cloudfront.net/Pflc_FzfyOMuaf_w7gr2wg/large.jpg", date: "1940", theme_id: 1},
+  {paint_medium: "Oil on canvas", artist_id: 30, genre_id: 1, title: "Paysage de Mirmande", currently_at: nil, additional_info: nil, fan_id: nil, image: "https://d32dm0rphc51dk.cloudfront.net/Ne-L94fTB-pQglSuhzpI6Q/large.jpg", date: "1938", theme_id: 4},
+  {paint_medium: "Oil on waxed linen", artist_id: 31, genre_id: 1, title: "Still Life with Apples and Shell", currently_at: nil, additional_info: nil, fan_id: nil, image: "https://d32dm0rphc51dk.cloudfront.net/p9J91glEhW3Qqj5es-2L4A/large.jpg", date: "1912", theme_id: 6}
 ])
 Theme.create!([
   {description: nil, theme_name: "Bodies / Figures"},
@@ -85,10 +88,11 @@ Artist.create!([
 ])
 
 ArtMovement.create!([
+  {genre_name: "Impressionist"},
   {genre_name: "Contemporary Art"},
   {genre_name: "Realism"},
-  {genre_name: "Post-War Art"},
-  {genre_name: "Impressionist"}
+  {genre_name: "Post-War Art"}
+  
 ])
 User.create!([
   {email: "enavarro1@uchicago.edu", password: "password", username: "estefinc"},

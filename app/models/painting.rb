@@ -14,6 +14,7 @@
 #  artist_id       :integer
 #  fan_id          :integer
 #  genre_id        :integer
+#  style_id        :integer
 #  theme_id        :integer
 #
 
